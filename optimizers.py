@@ -9,7 +9,8 @@ from __future__ import print_function
 import numpy as np
 
 from keras import backend as K
-from keras.utils.generic_utils import get_from_module
+# Note: get_from_module was removed in newer Keras versions
+# from keras.utils.generic_utils import get_from_module
 
 from keras.optimizers import Optimizer
 
@@ -71,7 +72,8 @@ class Adam(Optimizer):
 
         self.epsilon = epsilon
 
-    def get_updates(self, params, constraints, loss):
+    def get_updates(self, loss, params):
+        """Updated signature for Keras 2.12 - loss comes first, constraints removed."""
         grads = self.get_gradients(loss, params)
         self.updates = [K.update_add(self.iterations, 1)]
 
@@ -85,7 +87,7 @@ class Adam(Optimizer):
             lr_t[param_type] = lr * K.sqrt(1. - K.pow(self.beta_2[param_type], t)) / (
                 1. - K.pow(self.beta_1[param_type], t))
 
-        shapes = [K.get_variable_shape(p) for p in params]
+        shapes = [K.int_shape(p) for p in params]
         # add param type here
         param_types = []
         for param in params:
@@ -112,10 +114,7 @@ class Adam(Optimizer):
             self.updates.append(K.update(m, m_t))
             self.updates.append(K.update(v, v_t))
             new_p = p_t
-            # apply constraints
-            if p in constraints:
-                c = constraints[p]
-                new_p = c(new_p)
+            # Constraints are handled by the model in Keras 2.12, not here
             self.updates.append(K.update(p, new_p))
 
         return self.updates
@@ -139,7 +138,7 @@ class Adam(Optimizer):
                   'beta_2': beta_2,
                   'epsilon': self.epsilon}
 
-        base_config = super(Adam, self).get_config
+        base_config = super(Adam, self).get_config()
 
         return dict(list(base_config.items()) + list(config.items()))
 
@@ -148,6 +147,7 @@ class Adam(Optimizer):
 adam = Adam
 
 
-def get(identifier, kwargs=None):
-    return get_from_module(identifier, globals(), 'optimizer',
-                           instantiate=True, kwargs=kwargs)
+# Note: get() function commented out as get_from_module is no longer available in Keras 2.12+
+# def get(identifier, kwargs=None):
+#     return get_from_module(identifier, globals(), 'optimizer',
+#                            instantiate=True, kwargs=kwargs)

@@ -121,11 +121,29 @@ class VisualisationCallback(keras.callbacks.Callback):
         images = []
         filenames = ["./.tmp%d.png" % epoch for epoch in np.arange(self.epochs + 1)]
         for filename in filenames:
-            images.append(imageio.imread(filename))
-            os.remove(filename)
-        imageio.mimsave('./figures/retraining.gif', images, duration=.5)
+            if os.path.exists(filename):
+                img = imageio.imread(filename)
+                images.append(img)
+                os.remove(filename)
+        if len(images) > 0:
+            # Ensure all images have the same shape by using first image's shape as reference
+            target_shape = images[0].shape
+            resized_images = []
+            for img in images:
+                if img.shape != target_shape:
+                    # Skip images with different shapes (shouldn't happen but just in case)
+                    print(f"Warning: Skipping image with shape {img.shape}, expected {target_shape}")
+                else:
+                    resized_images.append(img)
+            if len(resized_images) > 0:
+                # Ensure figures directory exists
+                os.makedirs('./figures', exist_ok=True)
+                imageio.mimsave('./figures/retraining.gif', resized_images, duration=.5)
 
     def plot_histogram(self, epoch):
+        # Clear previous output first (wait for new output to be ready)
+        display.clear_output(wait=True)
+
         # get network weights
         W_T = self.model.get_weights()
         W_0 = self.W_0
@@ -141,8 +159,10 @@ class VisualisationCallback(keras.callbacks.Callback):
         x0 = -1.2
         x1 = 1.2
         I = np.random.permutation(len(weights_0))
-        f = sns.jointplot(weights_0[I], weights_T[I], size=8, kind="scatter", color="g", stat_func=None, edgecolor='w',
-                          marker='o', joint_kws={"s": 8}, marginal_kws=dict(bins=1000), ratio=4)
+        # Updated for seaborn 0.13+: use x= and y= keyword args, size -> height
+        f = sns.jointplot(x=weights_0[I], y=weights_T[I], height=8, kind="scatter", color="g",
+                          marker='o', joint_kws={"s": 8, "edgecolor": 'w'},
+                          marginal_kws=dict(bins=1000), ratio=4)
         f.ax_joint.hlines(mu_T, x0, x1, lw=0.5)
 
         for k in range(len(mu_T)):
@@ -155,11 +175,15 @@ class VisualisationCallback(keras.callbacks.Callback):
         score = \
             self.model.evaluate({'input': self.X_test, }, {"error_loss": self.Y_test, "complexity_loss": self.Y_test, },
                                 verbose=0)[3]
-        sns.plt.title("Epoch: %d /%d\nTest accuracy: %.4f " % (epoch, self.epochs, score))
+        plt.suptitle("Epoch: %d /%d\nTest accuracy: %.4f " % (epoch, self.epochs, score))
         f.ax_marg_y.set_xscale("log")
         f.set_axis_labels("Pretrained", "Retrained")
         f.ax_marg_x.set_xlim(-1, 1)
         f.ax_marg_y.set_ylim(-1, 1)
-        display.clear_output()
-        f.savefig("./.tmp%d.png" % epoch, bbox_inches='tight')
-        plt.show()
+
+        # Display the plot in the notebook
+        display.display(f.fig)
+
+        # Save to temp file for GIF generation
+        f.savefig("./.tmp%d.png" % epoch, bbox_inches='tight', dpi=100)  # Fixed DPI for consistent size
+        plt.close(f.fig)  # Close the figure to free memory

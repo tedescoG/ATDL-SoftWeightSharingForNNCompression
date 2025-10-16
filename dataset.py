@@ -27,7 +27,7 @@ def mnist():
     X_train = X_train.reshape(X_train.shape[0], 1, img_rows, img_cols)
     X_test = X_test.reshape(X_test.shape[0], 1, img_rows, img_cols)
 
-    if K._BACKEND == "tensorflow":
+    if K.backend() == "tensorflow":
         X_train = transpose(X_train, axes=[0, 2, 3, 1])
         X_test = transpose(X_test, axes=[0, 2, 3, 1])
 

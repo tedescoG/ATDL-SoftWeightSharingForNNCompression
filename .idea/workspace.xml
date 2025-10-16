@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6816f79c-45db-4c4c-a858-953f857a0c6d" name="Changes" comment="add .gitignore to exclude IDE files and CLAUDE.md">
+      <change beforePath="$PROJECT_DIR$/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empirical_priors.py" beforeDir="false" afterPath="$PROJECT_DIR$/empirical_priors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extended_keras.py" beforeDir="false" afterPath="$PROJECT_DIR$/extended_keras.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/arrow.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/arrow.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/han_clustering.png" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/han_clustering.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/han_cutandtrain.gif" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/han_cutandtrain.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/han_final_cut.png" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/han_final_cut.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/han_pretraining.gif" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/han_pretraining.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/han_retraining.gif" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/han_retraining.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/post-processed.png" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/post-processed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/post-processed_log.png" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/post-processed_log.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/reference.png" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/reference.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/reference_log.png" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/reference_log.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/retrained.png" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/retrained.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/retrained_log.png" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/retrained_log.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/retraining.gif" beforeDir="false" afterPath="$PROJECT_DIR$/figures_old/retraining.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/optimizers.py" beforeDir="false" afterPath="$PROJECT_DIR$/optimizers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tutorial.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial.ipynb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="345wnICRlnK9noKZ8tBCOK2yd5c" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.test_notebook_execution.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.26830.99" />
+        <option value="bundled-python-sdk-164cda30dcd9-0af03a5fa574-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.26830.99" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6816f79c-45db-4c4c-a858-953f857a0c6d" name="Changes" comment="" />
+      <created>1760516906025</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760516906025</updated>
+      <workItem from="1760516907148" duration="12000" />
+      <workItem from="1760516939098" duration="635000" />
+      <workItem from="1760517582142" duration="16121000" />
+      <workItem from="1760544282864" duration="735000" />
+      <workItem from="1760598462994" duration="2193000" />
+      <workItem from="1760600684926" duration="12066000" />
+    </task>
+    <task id="LOCAL-00001" summary="add .gitignore to exclude IDE files and CLAUDE.md">
+      <option name="closed" value="true" />
+      <created>1760517383117</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760517383117</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="82722bec-39bf-4f78-b1df-9265dde6f65f" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="82722bec-39bf-4f78-b1df-9265dde6f65f">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add .gitignore to exclude IDE files and CLAUDE.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="add .gitignore to exclude IDE files and CLAUDE.md" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ATDL_SoftWeightSharingForNNCompression$test_notebook_execution.coverage" NAME="test_notebook_execution Coverage Results" MODIFIED="1760522446713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

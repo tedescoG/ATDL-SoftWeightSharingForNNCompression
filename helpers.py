@@ -8,7 +8,7 @@ Karen Ullrich, Sep 2016
 """
 
 import numpy as np
-from scipy.misc import logsumexp
+from scipy.special import logsumexp
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -40,7 +40,7 @@ def reshape_like(in_array, shaped_array):
 
 def merger(inputs):
     """Comparing and merging components."""
-    for _ in xrange(3):
+    for _ in range(3):
         lists = []
         for inpud in inputs:
             for i in inpud:
@@ -70,7 +70,7 @@ def compute_responsibilies(xs, mus, logprecisions, pis):
     K = len(pis)
     W = len(xs)
     responsibilies = np.zeros((K, len(xs)))
-    for k in xrange(K):
+    for k in range(K):
         # Not normalized!!!
         responsibilies[k] = pis[k] * np.exp(0.5 * logprecisions[k]) * np.exp(
             - np.exp(logprecisions[k]) / 2 * (xs - mus[k]) ** 2)
@@ -98,7 +98,7 @@ def discretesize(W, pi_zero=0.999):
 
     # merge
     idx, idy = np.where(K < 1e-10)
-    lists = merger(np.asarray(zip(idx, idy)))
+    lists = merger(np.asarray(list(zip(idx, idy))))
     # compute merged components
     # print lists
     new_means, new_logprecisions, new_logpis = [], [], []
@@ -133,7 +133,7 @@ def save_histogram(W_T,save, upper_bound=200):
 
 
         plt.figure(figsize=(10, 7))
-	plt.yscale("log")
+        plt.yscale("log")
         sns.set(color_codes=True)
         plt.xlim(-1,1)
         plt.ylim(0.001,upper_bound*5)
