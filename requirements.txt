@@ -1,0 +1,25 @@
+# Core Deep Learning Framework
+tensorflow==2.12.0
+keras==2.12.0
+
+# Numerical Computing
+numpy==1.23.5
+scipy==1.13.0
+
+# Visualization
+matplotlib==3.9.0
+seaborn==0.13.0
+imageio==2.37.0
+
+# Jupyter Notebook Environment
+jupyter==1.0.0
+notebook==6.5.4
+ipython==8.12.0
+ipykernel==6.22.0
+
+# Additional dependencies (auto-resolved by pip)
+# These are typically installed automatically with the above packages
+# but listed here for completeness:
+# - h5py (for Keras model saving/loading)
+# - pillow (for image processing in imageio)
+# - pandas (dependency of seaborn)
