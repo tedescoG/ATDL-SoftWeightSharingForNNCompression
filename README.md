@@ -24,7 +24,7 @@ Traditional neural network compression approaches (e.g., Han et al. 2016) use a 
 - **Simultaneously prunes and quantizes** weights in one differentiable procedure
 - Uses a **Gaussian Mixture Model (GMM) prior** for weight compression
 - Implements **empirical Bayesian learning** where prior parameters are learned alongside network weights
-- Achieves **~93% pruning** with **4-bit quantization** while maintaining accuracy
+- Achieves **~90% pruning** while maintaining accuracy
 
 ### Three-Stage Pipeline
 
@@ -243,14 +243,13 @@ loss_weights = {
 
 ### Expected Performance on LeNet-300-100 (MNIST, 642K parameters)
 
-| Metric | Value |
-|--------|-------|
-| **Pretrained Accuracy** | ~98.9% |
-| **Retrained Accuracy** | ~99.0% |
-| **Post-processed Accuracy** | ~99.0% |
-| **Compression Rate** | ~7.5% non-zero weights (93% pruning) |
-| **Quantization** | 16 cluster means (4-bit indices) |
-| **Effective Compression** | ~30x size reduction |
+| Metric | Value                                |
+|--------|--------------------------------------|
+| **Pretrained Accuracy** | ~98.9%                               |
+| **Retrained Accuracy** | ~99.0%                               |
+| **Post-processed Accuracy** | ~99.0%                               |
+| **Compression Rate** | ~9.36% non-zero weights |
+| **Quantization** | 16 cluster means      |
 
 ### Visualization Outputs
 
