@@ -346,10 +346,6 @@ conda activate sws
 2. **Model Saving**: Must use HDF5 format (`.h5`) when eager execution disabled
 3. **Legacy Optimizer API**: Cannot easily upgrade without major rewrite
 
-**Platform-Specific:**
-- **macOS (M1/M2/M3)**: May require Rosetta 2 or use `tensorflow-macos`
-- **Linux**: CUDA support available for GPU acceleration
-- **Windows**: CPU-only or requires WSL2 for GPU support
 
 ### Tested Environment
 
